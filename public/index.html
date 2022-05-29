@@ -174,7 +174,8 @@
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
 
-            if(Number(prediction[i].probability.toFixed(2)) > 0.5){
+            if(Number(prediction[i].probability.toFixed(2)) > 0.9){
+                console.log(prediction[i].className);
                 ws.send(JSON.stringify({
                     gestureName : prediction[i].className
                 }));
