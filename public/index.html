@@ -181,7 +181,10 @@
         console.log(resultObject);
 
         // Send this object to server !
-        ws.send(JSON.stringify(resultObject));
+        setInterval(() => {
+            ws.send(JSON.stringify(resultObject));
+        }, 100);
+
 
         // finally draw the poses
         drawPose(pose);
